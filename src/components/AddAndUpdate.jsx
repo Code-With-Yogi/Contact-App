@@ -42,6 +42,7 @@ const AddAndUpdate = ({ isOpen, onClose, isUpdate, contacts }) => {
                     initialValues={isUpdate ? {
                         name: contacts.name,
                         email: contacts.email,
+                        phone: contacts.phone,
                     } : {
                         name: "",
                         email: "",
@@ -60,6 +61,10 @@ const AddAndUpdate = ({ isOpen, onClose, isUpdate, contacts }) => {
                         <div className="flex flex-col gap-1">
                             <label htmlFor="email">Email</label>
                             <Field type="email" name="email" className="border h-10 rounded-md pl-2" required />
+                        </div>
+                        <div className="flex flex-col gap-1">
+                            <label htmlFor="phone">Mobile Number</label>
+                            <Field type="number" name="phone" className="border h-10 rounded-md pl-2" required />
                         </div>
 
                         <button type="submit" className="bg-orange px-3 py-1.5  rounded-md text-white">{isUpdate ? "Update" : "Add Contact"}</button>
